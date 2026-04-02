@@ -60,7 +60,7 @@ export default function KontaktPage() {
 
             <div>
               <p className="text-[#00A3FF] font-semibold mb-1">Telefon</p>
-              <p className="text-white">062 832 88 13</p>
+              <p className="text-white">066 8018230</p>
             </div>
 
             <div>

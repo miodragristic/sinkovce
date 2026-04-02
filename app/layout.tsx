@@ -24,20 +24,29 @@ export const metadata: Metadata = {
     default: "FK Gornje Sinkovce",
     template: "%s | FK Gornje Sinkovce",
   },
-  description: "Zvanična stranica FK Gornje Sinkovce - Crno-beli ponos Gornjeg Sinkovca od 1980. godine",
-  keywords: ["FK Gornje Sinkovce", "fudbal Leskovac", "Gornje Sinkovce", "gradska liga", "crno-beli", "fudbalski klub"],
+  description: "Zvanična stranica FK Gornje Sinkovce - Crno-beli ponos Gornjeg Sinkovca od 1980. godine. Pratite vesti, utakmice, prvi tim i sve informacije o klubu sa stadiona Omladinac.",
+  
+  keywords: [
+    "FK Gornje Sinkovce", 
+    "Gornje Sinkovce", 
+    "fudbal Leskovac", 
+    "gradska liga Leskovac", 
+    "stadion Omladinac", 
+    "crno-beli", 
+    "fudbalski klub"
+  ],
   
   openGraph: {
     title: "FK Gornje Sinkovce",
-    description: "Zvanična stranica FK Gornje Sinkovcea",
-    url: "https://www.fkgs.rs",                    // promeni kasnije ako imaš pravi domen
+    description: "Zvanična stranica FK Gornje Sinkovce - Crno-beli ponos Gornjeg Sinkovca od 1980. godine",
+    url: "https://www.fkgs.rs",
     siteName: "FK Gornje Sinkovce",
     images: [
       {
-        url: "/og-image.jpg",                       // ← Glavna OG slika (1200x630)
-        width: 80,
-        height: 8,
-        alt: "FK Gornje Sinkovce - Crno-beli ponos Gornjeg Sinkovca",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "FK Gornje Sinkovce - Stadion Omladinac",
       },
     ],
     locale: "sr_RS",
@@ -53,7 +62,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",   // možeš dodati kasnije
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -64,6 +73,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sr">
+      <head>
+        {/* Cookiebot - GDPR Cookie Consent */}
+        <Script 
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="482623d0-f805-4f44-a8ce-cf508821d662"
+          type="text/javascript"
+          async
+          strategy="afterInteractive"
+        />
+      </head>
+
       <body 
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
@@ -74,9 +95,6 @@ export default function RootLayout({
         </main>
 
         <Footer />
-
-         
-      
       </body>
     </html>
   );
