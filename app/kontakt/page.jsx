@@ -71,12 +71,12 @@ export default function KontaktPage() {
             <div>
               <p className="text-[#00A3FF] font-semibold mb-1">Web sajt</p>
               <a 
-                href="http://www.fkgornjesinkovce.com" 
+                href="http://www.fkgs.rs" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-white hover:text-[#00A3FF] transition-colors"
               >
-                www.fkgornjesinkovce.com
+                www.fkgs.rs
               </a>
             </div>
 
