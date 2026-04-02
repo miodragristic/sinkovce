@@ -1,7 +1,6 @@
-// middleware.js
 import { NextResponse } from "next/server";
 
-export async function middleware(request) {
+export async function proxy(request: Request) {
   const userAgent = request.headers.get("user-agent") || "";
   const pathname = new URL(request.url).pathname;
 
@@ -18,7 +17,6 @@ export async function middleware(request) {
     "embedly",
     "redditbot",
     "applebot",
-  
   ];
 
   const IGNORE_EXTENSIONS = [
@@ -34,6 +32,5 @@ export async function middleware(request) {
     return NextResponse.next();
   }
 
-  // ✅ Nema prerender logike — sve ide kroz Next.js direktno
   return NextResponse.next();
 }

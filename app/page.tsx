@@ -54,7 +54,10 @@ const squad = {
 
 // ==================== DRES 25/26 SEKCIJA (10 slika) ====================
 const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg";
-function DresSection() {
+interface DresSectionProps {
+  defaultBgImage?: string;
+}
+function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Ovde stavi 10 različitih slika kasnije
@@ -213,7 +216,22 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
 }
 
 // ==================== POSITION SECTION - SLIDER JEDAN PO JEDAN ====================
-function PositionSection({ title, players, bgImage, specialPlayerImage = null, specialNumber = null }) {
+type PlayerItem = {
+  number: number;
+  name: string;
+  surname: string;
+  position: string;
+};
+
+interface PositionSectionProps {
+  title?: string;
+  players: PlayerItem[];
+  bgImage: string;
+  specialPlayerImage?: string | null;
+  specialNumber?: number | null;
+}
+
+function PositionSection({ title = "", players, bgImage, specialPlayerImage = null, specialNumber = null }: PositionSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
