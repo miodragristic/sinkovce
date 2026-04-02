@@ -1,0 +1,107 @@
+// app/news/page.jsx
+
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg";
+
+const allNews = [
+  {
+  "id": 2,
+  "title": "Predstavljeni novi dresovi za sezonu 2025/26 – Premijera već protiv Navalina",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 1, 2026",
+  "excerpt": "FK Gornje Sinkovce predstavio je nove dresove za sezonu 2025/26. Dizajn inspirisan 80-im godinama sa modernim detaljima. Premijera novog dresa već protiv Navalina. Glavni sponzor US11 i retro F.K.G.S. ćirilicom.",
+  "imageUrl": "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg",
+  "link": "/vesti/novi-dres-2025-26"
+},
+
+{
+  "id": 1,
+  "title": "Bod u završnici – FK Gornje Sinkovce izbegao poraz protiv Mladosti iz Kutleša",
+  "author": "FK Gornje Sinkovce",
+  "date": "March 29, 2026",
+  "excerpt": "FK Gornje Sinkovce osvojio je važan bod na domaćem terenu protiv Mladosti iz Kutleša u 90. minutu. Lazar Petrović je realizovao penal i postavio konačnih 2:2.",
+  "imageUrl": "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
+  "link": "/vesti/fkgs-vs-mladost-k"
+}
+
+  // Dodaj još vesti ovde po potrebi...
+];
+
+const ITEMS_PER_PAGE = 6;
+
+export default function NewsPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(allNews.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentNews = allNews.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Header sa tvojom slikom */}
+      <div className="relative h-[420px] flex items-center justify-center overflow-hidden">
+        <Image
+          src={defaultBgImage}
+          alt="Vesti"
+          fill
+          className="object-cover brightness-75"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black" />
+        
+        <div className="relative z-10 text-center">
+          <h1 className="text-6xl md:text-7xl font-black tracking-wider mb-4">VESTI</h1>
+          <p className="text-xl text-gray-300">FK Gornje Sinkovce</p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {currentNews.map((post) => (
+            <Link href={post.link} key={post.id} className="group">
+              <div className="bg-zinc-900 border border-zinc-800 overflow-hidden hover:border-[#00A3FF] transition-all duration-300">
+                <div className="relative h-64">
+                  <Image 
+                    src={post.imageUrl} 
+                    alt={post.title} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="font-bold text-2xl leading-tight mb-4 group-hover:text-[#00A3FF] transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 mb-3">{post.author} • {post.date}</p>
+                  <p className="text-gray-300 line-clamp-3">{post.excerpt}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* PAGINACIJA */}
+        <div className="flex justify-center mt-16 gap-3">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`w-11 h-11 flex items-center justify-center border transition-all duration-200 text-lg font-medium ${
+                currentPage === page 
+                  ? 'bg-[#00A3FF] text-black border-[#00A3FF]' 
+                  : 'border-zinc-700 text-white hover:border-white hover:bg-zinc-900'
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
