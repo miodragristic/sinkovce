@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CookieBanner from "./components/CookieBanner";   // ← Nova komponenta
 
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -74,11 +75,12 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <head>
-        {/* Cookiebot - GDPR Cookie Consent */}
+        {/* Cookiebot - GDPR Cookie Consent (Manual mode) */}
         <Script 
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="482623d0-f805-4f44-a8ce-cf508821d662"
+          data-blockingmode="manual"           // ← Važno za Next.js
           type="text/javascript"
           async
           strategy="afterInteractive"
@@ -95,6 +97,9 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        {/* Cookie Consent Banner */}
+        <CookieBanner />
       </body>
     </html>
   );
