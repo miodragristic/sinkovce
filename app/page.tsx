@@ -54,7 +54,10 @@ const squad = {
 
 // ==================== DRES 25/26 SEKCIJA (10 slika) ====================
 const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg";
-function DresSection() {
+interface DresSectionProps {
+  defaultBgImage?: string;
+}
+function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Ovde stavi 10 različitih slika kasnije
