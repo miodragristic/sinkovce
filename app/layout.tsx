@@ -4,7 +4,7 @@ import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import CookieBanner from "./components/CookieBanner";   // ← Nova komponenta
+import CookieBanner from "./components/CookieBanner";
 
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -36,7 +36,12 @@ export const metadata: Metadata = {
     "crno-beli", 
     "fudbalski klub"
   ],
-  
+
+  // ← EVO GA GOOGLE SITE VERIFICATION
+  verification: {
+    google: "_SiQgprNJyVnLozxbjDOooPVyTIUguaKR5i_EcgPPGI",
+  },
+
   openGraph: {
     title: "FK Gornje Sinkovce",
     description: "Zvanična stranica FK Gornje Sinkovce - Crno-beli ponos Gornjeg Sinkovca od 1980. godine",
@@ -75,12 +80,12 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <head>
-        {/* Cookiebot - GDPR Cookie Consent (Manual mode) */}
+        {/* Cookiebot - GDPR Cookie Consent */}
         <Script 
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="482623d0-f805-4f44-a8ce-cf508821d662"
-          data-blockingmode="manual"           // ← Važno za Next.js
+          data-blockingmode="manual"
           type="text/javascript"
           async
           strategy="afterInteractive"
