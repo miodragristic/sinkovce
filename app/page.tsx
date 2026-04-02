@@ -1,11 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-// ← Ovde stavi
-const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg";
 
 interface Post {
   id: number;
@@ -55,16 +52,23 @@ const squad = {
  
 
 
-// ==================== DRES 25/26 SEKCIJA ====================
-function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSectionProps) {
+// ==================== DRES 25/26 SEKCIJA (10 slika) ====================
+const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg";
+function DresSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Ovde stavi 10 različitih slika kasnije
   const dresovi = [
-    { image: "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg" },
-    { image: "https://i.postimg.cc/CxbcbFBr/DSC-4941-(2).jpg" },
-    { image: "https://i.postimg.cc/4N9PTJ5X/DSC-4934.jpg" },
-    { image: "https://i.postimg.cc/sXLYt8QL/DSC-4944.jpg" },
-    { image: "https://i.postimg.cc/Xv7DWRq9/IMG-20260326-WA0022.jpg" },
+    // { image: "https://i.postimg.cc/w38hBmV9/IMG-20260327-WA0002.jpg", title: "DRES 25/26" },
+    { image: "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg", title: "DRES 25/26" },
+    { image: "https://i.postimg.cc/CxbcbFBr/DSC-4941-(2).jpg", title: "DRES 25/26" },
+    { image: "https://i.postimg.cc/4N9PTJ5X/DSC-4934.jpg", title: "DRES 25/26" },
+    { image: "https://i.postimg.cc/sXLYt8QL/DSC-4944.jpg", title: "DRES 25/26" },
+    { image: "https://i.postimg.cc/Xv7DWRq9/IMG-20260326-WA0022.jpg", title: "DRES 25/26" },
+    // { image: "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg", title: "DRES 25/26" },
+    // { image: "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg", title: "DRES 25/26" },
+    // { image: "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg", title: "DRES 25/26" },
+    // { image: "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg", title: "DRES 25/26" },
   ];
 
   const prevSlide = () => {
@@ -75,62 +79,77 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
     setCurrentIndex((prev) => (prev + 1) % dresovi.length);
   };
 
+  const current = dresovi[currentIndex];
+
   return (
-    <div className="bg-white py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="bg-white py-20">
+      <div className="max-w-7xl mx-auto px-6">
         
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           
           {/* Levi deo */}
-          <div className="lg:w-5/12 text-center lg:text-left">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-wider text-black leading-none mb-6">
+          <div className="lg:w-5/12">
+            <h2 className="text-6xl lg:text-7xl font-black tracking-wider text-black leading-none mb-6">
               DRES 25/26
             </h2>
             
             <Link 
               href="/dres"
-              className="inline-block border-2 border-black px-10 py-4 text-lg font-semibold hover:bg-black hover:text-white transition-all"
+              className="inline-block border-2 border-black px-12 py-4 text-lg font-semibold hover:bg-black hover:text-white transition-all"
             >
               KUPI ODMAH
             </Link>
           </div>
 
-          {/* Desni deo - SLIDER */}
-          <div className="lg:w-7/12 w-full overflow-hidden">
-            <div
-              className="flex transition-transform duration-700 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {dresovi.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-full aspect-[4/4.8] relative rounded-2xl overflow-hidden"
-                >
-                  <Image
-                    src={item.image}
-                    alt="Dres 25/26"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 700px"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+         {/* Desni deo - PRAVI SLIDER */}
+<div className="lg:w-7/12 overflow-hidden w-full">
+
+  <div
+    className="flex transition-transform duration-500 ease-in-out gap-4 lg:gap-6 justify-center lg:justify-start"
+    style={{
+      transform:
+        typeof window !== "undefined" && window.innerWidth < 1024
+          ? `translateX(-${currentIndex * 100}%)`
+          : `translateX(-${currentIndex * 280}px)`
+    }}
+  >
+    {dresovi.map((item, index) => (
+      <div
+        key={index}
+        className={`
+          relative flex-shrink-0
+          w-[90%] sm:w-[75%] 
+          lg:w-[260px] 
+          h-[300px] sm:h-[340px] lg:h-[360px]
+          transition-all duration-300
+          ${index === currentIndex ? "opacity-100 scale-100" : "opacity-40 scale-95"}
+        `}
+      >
+        <Image
+          src={item.image}
+          alt="Dres"
+          fill
+          className="object-cover"
+        />
+      </div>
+    ))}
+  </div>
+
+</div>
         </div>
 
-        {/* Kontrole - Strelice i link */}
-        <div className="flex justify-between items-center mt-10 lg:mt-12">
-          <div className="flex gap-4">
+        {/* Donji deo - Strelice i link */}
+        <div className="flex justify-between items-center mt-12">
+          <div className="flex gap-6">
             <button 
               onClick={prevSlide}
-              className="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
+              className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center text-4xl hover:bg-black hover:text-white transition-all"
             >
               ←
             </button>
             <button 
               onClick={nextSlide}
-              className="w-12 h-12 border-2 border-black rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
+              className="w-14 h-14 border-2 border-black rounded-full flex items-center justify-center text-4xl hover:bg-black hover:text-white transition-all"
             >
               →
             </button>
@@ -472,27 +491,27 @@ const Home = () => {
         </div>
       </div>
 
-          {/* TIM - CEO TIM */}
-<div className="bg-black py-16">
-  <div className="max-w-7xl mx-auto px-6">
-    <h2 className="text-5xl font-bold text-white mb-12 text-center tracking-wider">PRVI TIM</h2>
+            {/* TIM - CEO TIM */}
+      <div className="bg-black py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-5xl font-bold text-white mb-12 text-center tracking-wider">PRVI TIM</h2>
 
-    <PositionSection
-      title="IGRAČI"
-      players={squad.players}
-      bgImage="https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg"   // ← Direktno stavljamo URL
-    />
+          <PositionSection
+           
+            players={squad.players}           // Prikazuje sve igrače
+            bgImage={defaultBgImage}
+          />
 
-    <div className="flex justify-center mt-12">
-      <Link
-        href="/prvi-tim"
-        className="inline-block border-2 border-white px-12 py-4 text-white font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 tracking-wider"
-      >
-        VIDI CEO TIM
-      </Link>
-    </div>
-  </div>
-</div>
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/prvi-tim"
+              className="inline-block border-2 border-white px-12 py-4 text-white font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 tracking-wider"
+            >
+              VIDI CEO TIM
+            </Link>
+          </div>
+        </div>
+      </div>
 
      {/* ==================== REZULTATI SEKCIJA SA DINAMIČKIM TAJMEROM ==================== */}
 <div className="bg-[#0a0a0a] py-12 sm:py-16 lg:py-20">
