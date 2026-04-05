@@ -93,7 +93,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
           {/* Levi deo */}
           <div className="lg:w-5/12">
             <h2 className="text-6xl lg:text-7xl font-black tracking-wider text-black leading-none mb-6">
-              DRES 25/26
+              DRES 26/27
             </h2>
             
             <Link 
@@ -186,7 +186,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
 }
 
 // ==================== DATUM SLEDEĆE UTAKMICE ====================
-const nextMatchDate = new Date("2026-04-05T11:00:00+02:00").getTime();
+const nextMatchDate = new Date("2026-04-11T11:00:00+02:00").getTime();
 
 // ==================== DINAMIČKI TAJMER ====================
 function CountdownTimer({ targetDate }: { targetDate: number }) {
@@ -361,7 +361,7 @@ const Home = () => {
     link: "/vesti/fkgs-vs-mladost-k"
   },
     {
-  "title": "Predstavljeni novi dresovi za sezonu 2025/26",
+  "title": "Predstavljeni novi dresovi za sezonu 2026/27",
   "subtitle": "1. april 2026",
   "image": "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg",
   "link": "/vesti/novi-dres-2025-26"
@@ -374,31 +374,11 @@ const Home = () => {
     // }
   ];
 
-  const staffPicks = [
-    {
-      name: "Lionel Messi Inter Miami CF adidas Youth 2025 The Fortitude Kit Replica",
-      price: "$109.99",
-      image: "https://fanatics.frgimages.com/inter-miami-cf/youth-adidas-lionel-messi-black-inter-miami-cf-2025-the-fortitude-kit-replica-player-jersey_ss5_p-201604870+pv-1+u-mgihjk9ywffxfwjtkbrl+v-5p4ohbnddixdv7gyxn48.jpg?_hv=2&w=1018",
-      link: "https://fanatics.93n6tx.net/Qj7Dya",
-    },
-    {
-      name: "Christian Pulisic AC Milan Puma 2025/26 Home Replica Player Jersey",
-      price: "$134.99",
-      image: "https://fanatics.frgimages.com/ac-milan/mens-puma-christian-pulisic-red-ac-milan-2025/26-home-replica-player-jersey_ss5_p-203151178+pv-1+u-er1btbt7mp3rzbnzbc8c+v-roiui1cm4q80cwatqrz9.jpg?_hv=2&w=1018",
-      link: "https://fanatics.93n6tx.net/4G4WLZ",
-    },
-    {
-      name: "Lamine Yamal Barcelona Nike 2025/26 Replica Player Jersey",
-      price: "$129.99",
-      image: "https://fanatics.frgimages.com/barcelona/mens-nike-lamine-yamal-blue-barcelona-2025/26-replica-player-jersey_ss5_p-203284529+pv-1+u-egcn4pkk9yugwdxafypr+v-9yopybyijyh7ysmfxoob.jpg?_hv=2&w=1018",
-      link: "https://fanatics.93n6tx.net/4GX9G0",
-    },
-  ];
 
   const blogPosts: Post[] = [
     {
   "id": 2,
-  "title": "Predstavljeni novi dresovi za sezonu 2025/26 – Premijera već protiv Navalina",
+  "title": "Predstavljeni novi dresovi za sezonu 2026/27 – Premijera već protiv Navalina",
   "author": "FK Gornje Sinkovce",
   "date": "April 1, 2026",
   "excerpt": "FK Gornje Sinkovce predstavio je nove dresove za sezonu 2025/26. Dizajn inspirisan 80-im godinama sa modernim detaljima. Premijera novog dresa već protiv Navalina. Glavni sponzor US11 i retro F.K.G.S. ćirilicom.",
@@ -529,29 +509,7 @@ const Home = () => {
 
         <div className="space-y-6 sm:space-y-8 lg:space-y-10">
           {/* Jedna utakmica */}
-          <div className="flex items-start gap-4">
-            <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
-              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">21</div>
-              <div className="text-xs text-gray-400 uppercase mt-1">Mar</div>
-            </div>
-
-            <div className="flex-1 min-w-0">
-              <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 15:00</p>
-              <div className="flex justify-between items-center gap-4">
-                <div className="space-y-1 min-w-0">
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">MORAVAC</p>
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
-                </div>
-                <div className="text-right text-lg sm:text-xl font-bold shrink-0">
-                  <p className="text-[#00A3FF]">1</p>
-                  <p className="text-[#00A3FF]">0</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Druga utakmica – isti blok */}
-          <div className="flex items-start gap-4">
+       <div className="flex items-start gap-4">
             <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
               <div className="text-3xl sm:text-4xl font-bold text-white leading-none">29</div>
               <div className="text-xs text-gray-400 uppercase mt-1">Mar</div>
@@ -571,6 +529,28 @@ const Home = () => {
               </div>
             </div>
           </div>
+
+          {/* Druga utakmica – isti blok */}
+          <div className="flex items-start gap-4">
+            <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
+              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">05</div>
+              <div className="text-xs text-gray-400 uppercase mt-1">Apr</div>
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
+              <div className="flex justify-between items-center gap-4">
+                <div className="space-y-1 min-w-0">
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">NAVALIN</p>
+                </div>
+                <div className="text-right text-lg sm:text-xl font-bold shrink-0">
+                  <p className="text-[#00A3FF]">1</p>
+                  <p className="text-[#00A3FF]">4</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -584,16 +564,16 @@ const Home = () => {
           {/* Timovi */}
           <div className="text-left">
             <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">GRADSKA LIGA LESKOVAC - 11:00</p>
-            <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white">NAPREDAK</p>
             <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
-            <p className="text-2xl sm:text-3xl font-bold text-white">NAVALIN</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
           </div>
 
           {/* Tajmer + datum */}
           <div className="text-center sm:text-right">
             <CountdownTimer targetDate={nextMatchDate} />
             <div className="mt-3 sm:mt-4">
-              <div className="text-4xl sm:text-5xl font-bold text-white leading-none">05</div>
+              <div className="text-4xl sm:text-5xl font-bold text-white leading-none">11</div>
               <div className="text-xs sm:text-sm text-gray-400 uppercase">Apr</div>
             </div>
           </div>
