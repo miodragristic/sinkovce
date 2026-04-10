@@ -355,11 +355,17 @@ const Home = () => {
 
   const heroItems = [
     {
-    title: "Bod u završnici - Sinkovce pokazalo karakter",
-    subtitle: "29. mart 2026",
-    image: "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
-    link: "/vesti/fkgs-vs-mladost-k"
-  },
+  "title": "Gornje Sinkovce – Navalin 1:4",
+  "subtitle": "07. april 2026",
+  "image": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
+  "link": "/vesti/fkgs-vs-navalin"
+},
+  //   {
+  //   title: "Bod u završnici - Sinkovce pokazalo karakter",
+  //   subtitle: "29. mart 2026",
+  //   image: "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
+  //   link: "/vesti/fkgs-vs-mladost-k"
+  // },
     {
   "title": "Predstavljeni novi dresovi za sezonu 2026/27",
   "subtitle": "1. april 2026",
@@ -376,6 +382,15 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
+    {
+  "id": 3,
+  "title": "Gornje Sinkovce – Navalin 1:4 | Težak poraz na domaćem terenu",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 07, 2026",
+  "excerpt": "FK Gornje Sinkovce pretrpeo je ubedljiv poraz od Navalina rezultatom 1:4. Odlična igra i vođstvo u prvom poluvremenu preko Miloša Veličkovića, ali potpuni kolaps u drugom delu meča.",
+  "imageUrl": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
+  "link": "/vesti/fkgs-vs-navalin"
+},
     {
   "id": 2,
   "title": "Predstavljeni novi dresovi za sezonu 2026/27 – Premijera već protiv Navalina",

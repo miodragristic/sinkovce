@@ -10,6 +10,16 @@ const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg
 
 const allNews = [
   {
+  "id": 3,
+  "title": "Gornje Sinkovce – Navalin 1:4 | Težak poraz na domaćem terenu",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 07, 2026",
+  "excerpt": "FK Gornje Sinkovce pretrpeo je ubedljiv poraz od Navalina rezultatom 1:4. Odlična igra i vođstvo u prvom poluvremenu preko Miloša Veličkovića, ali potpuni kolaps u drugom delu meča.",
+  "imageUrl": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
+  "link": "/vesti/fkgs-vs-navalin"
+},
+
+  {
   "id": 2,
   "title": "Predstavljeni novi dresovi za sezonu 2025/26 – Premijera već protiv Navalina",
   "author": "FK Gornje Sinkovce",
