@@ -355,17 +355,12 @@ const Home = () => {
 
   const heroItems = [
     {
-  "title": "Gornje Sinkovce – Navalin 1:4",
-  "subtitle": "07. april 2026",
-  "image": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
-  "link": "/vesti/fkgs-vs-navalin"
+  "title": "Napredak Bogojevce – Gornje Sinkovce 0:3  Službena pobeda par forfe",
+  "subtitle": "11. april 2026",
+  "image": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
+  "link": "/vesti/napredak-bogojevce-vs-fkgs"
 },
-  //   {
-  //   title: "Bod u završnici - Sinkovce pokazalo karakter",
-  //   subtitle: "29. mart 2026",
-  //   image: "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
-  //   link: "/vesti/fkgs-vs-mladost-k"
-  // },
+  
     {
   "title": "Predstavljeni novi dresovi za sezonu 2026/27",
   "subtitle": "1. april 2026",
@@ -382,15 +377,24 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
-    {
-  "id": 3,
-  "title": "Gornje Sinkovce – Navalin 1:4 | Težak poraz na domaćem terenu",
-  "author": "FK Gornje Sinkovce",
-  "date": "April 07, 2026",
-  "excerpt": "FK Gornje Sinkovce pretrpeo je ubedljiv poraz od Navalina rezultatom 1:4. Odlična igra i vođstvo u prvom poluvremenu preko Miloša Veličkovića, ali potpuni kolaps u drugom delu meča.",
-  "imageUrl": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
-  "link": "/vesti/fkgs-vs-navalin"
-},
+     {
+    "id": 4,
+    "title": "Napredak Bogojevce – Gornje Sinkovce 0:3 | Službena pobeda par forfe",
+    "author": "FK Gornje Sinkovce",
+    "date": "April 11, 2026",
+    "excerpt": "Utakmica između Napredka Bogojevce i FK Gornje Sinkovce nije odigrana. FK Napredak Bogojevce je odustao od takmičenja, pa je meč registrovan službenim rezultatom 0:3 u korist našeg tima. Tri boda ostaju u Gornjem Sinkovcu.",
+    "imageUrl": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
+    "link": "/vesti/napredak-bogojevce-vs-fkgs"
+  },
+  {
+    "id": 3,
+    "title": "Gornje Sinkovce – Navalin 1:4 | Težak poraz na domaćem terenu",
+    "author": "FK Gornje Sinkovce",
+    "date": "April 07, 2026",
+    "excerpt": "FK Gornje Sinkovce pretrpeo je ubedljiv poraz od Navalina rezultatom 1:4. Odlična igra i vođstvo u prvom poluvremenu preko Miloša Veličkovića, ali potpuni kolaps u drugom delu meča.",
+    "imageUrl": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
+    "link": "/vesti/fkgs-vs-navalin"
+  },
     {
   "id": 2,
   "title": "Predstavljeni novi dresovi za sezonu 2026/27 – Premijera već protiv Navalina",
@@ -400,15 +404,7 @@ const Home = () => {
   "imageUrl": "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg",
   "link": "/vesti/novi-dres-2025-26"
 },
-  {
-  "id": 1,
-  "title": "Bod u završnici – FK Gornje Sinkovce izbegao poraz protiv Mladosti iz Kutleša",
-  "author": "FK Gornje Sinkovce",
-  "date": "March 29, 2026",
-  "excerpt": "FK Gornje Sinkovce osvojio je važan bod na domaćem terenu protiv Mladosti iz Kutleša u 90. minutu. Lazar Petrović je realizovao penal i postavio konačnih 2:2.",
-  "imageUrl": "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
-  "link": "/vesti/fkgs-vs-mladost-k"
-},
+ 
 
   ];
 
@@ -530,28 +526,7 @@ const Home = () => {
               <div className="text-xs text-gray-400 uppercase mt-1">Mar</div>
             </div>
 
-            <div className="flex-1 min-w-0">
-              <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
-              <div className="flex justify-between items-center gap-4">
-                <div className="space-y-1 min-w-0">
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">MLADOST KUTLES</p>
-                </div>
-                <div className="text-right text-lg sm:text-xl font-bold shrink-0">
-                  <p className="text-[#00A3FF]">2</p>
-                  <p className="text-[#00A3FF]">2</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Druga utakmica – isti blok */}
-          <div className="flex items-start gap-4">
-            <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
-              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">05</div>
-              <div className="text-xs text-gray-400 uppercase mt-1">Apr</div>
-            </div>
-
+            
             <div className="flex-1 min-w-0">
               <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
               <div className="flex justify-between items-center gap-4">
@@ -562,6 +537,28 @@ const Home = () => {
                 <div className="text-right text-lg sm:text-xl font-bold shrink-0">
                   <p className="text-[#00A3FF]">1</p>
                   <p className="text-[#00A3FF]">4</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Druga utakmica – isti blok */}
+          <div className="flex items-start gap-4">
+            <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
+              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">11</div>
+              <div className="text-xs text-gray-400 uppercase mt-1">Apr</div>
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
+              <div className="flex justify-between items-center gap-4">
+                <div className="space-y-1 min-w-0">
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">NAPREDAK</p>
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
+                </div>
+                <div className="text-right text-lg sm:text-xl font-bold shrink-0">
+                  <p className="text-[#00A3FF]">0</p>
+                  <p className="text-[#00A3FF]">3</p>
                 </div>
               </div>
             </div>
