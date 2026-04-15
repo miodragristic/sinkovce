@@ -8,105 +8,105 @@ const tabelaData = [
     poz: 1,
     simbol: '▲',
     domacin: 'NAVALIN',
-    odigrane: 13,
-    pobede: 10,
+    lokacija: 'Navalin',
+    odigrane: 14,
+    pobede: 11,
     nerešeno: 2,
     porazi: 1,
-    golovi: '39:8',
-    diff: '+31',
-    forma: ['W', 'W', 'W', 'D', 'W'],
-    poeni: 32
+    golovi: '42:8',
+    diff: '+34',
+    poeni: 35
   },
   {
     poz: 2,
     simbol: '▼',
     domacin: 'MLADOST (DL)',
-    odigrane: 13,
-    pobede: 10,
+    lokacija: 'Donja Lokošnica',
+    odigrane: 14,
+    pobede: 11,
     nerešeno: 2,
     porazi: 1,
-    golovi: '32:5',
-    diff: '+27',
-    forma: ['W', 'W', 'W', 'D', 'W'],
-    poeni: 32
+    golovi: '34:5',
+    diff: '+29',
+    poeni: 35
   },
   {
     poz: 3,
     simbol: '',
     domacin: 'MLADOST (K)',
-    odigrane: 13,
-    pobede: 8,
+    lokacija: 'Kutleš',
+    odigrane: 14,
+    pobede: 9,
     nerešeno: 2,
     porazi: 3,
-    golovi: '34:15',
-    diff: '+19',
-    forma: ['W', 'W', 'D', 'D', 'W'],
-    poeni: 26
+    golovi: '39:19',
+    diff: '+20',
+    poeni: 29
   },
   {
     poz: 4,
     simbol: '',
     domacin: 'RADNIK 2013',
-    odigrane: 13,
+    lokacija: 'Šišince',
+    odigrane: 14,
     pobede: 8,
     nerešeno: 1,
-    porazi: 4,
-    golovi: '27:11',
-    diff: '+16',
-    forma: ['W', 'W', 'L', 'W', 'W'],
+    porazi: 5,
+    golovi: '31:16',
+    diff: '+15',
     poeni: 25
   },
   {
     poz: 5,
     simbol: '',
     domacin: 'FSU MORAVAC 1947',
-    odigrane: 13,
+    lokacija: 'Mrštane',
+    odigrane: 14,
     pobede: 6,
     nerešeno: 0,
-    porazi: 7,
-    golovi: '15:34',
-    diff: '-19',
-    forma: ['L', 'L', 'W', 'W', 'L'],
+    porazi: 8,
+    golovi: '15:36',
+    diff: '-21',
     poeni: 18
   },
   {
     poz: 6,
     simbol: '',
     domacin: 'GORNJE SINKOVCE',
-    odigrane: 13,
-    pobede: 4,
+    lokacija: 'Gornje Sinkovce',
+    odigrane: 14,
+    pobede: 5,
     nerešeno: 1,
     porazi: 8,
-    golovi: '19:32',
-    diff: '-13',
-    forma: ['L', 'W', 'L', 'D', 'L'],
-    poeni: 13
+    golovi: '22:32',
+    diff: '-10',
+    poeni: 16
   },
   {
     poz: 7,
     simbol: '',
-    domacin: 'TODOROVCE',
-    odigrane: 13,
-    pobede: 1,
-    nerešeno: 0,
-    porazi: 12,
-    golovi: '3:36',
-    diff: '-33',
-    forma: ['L', 'L', 'L', 'L', 'L'],
-    poeni: 3
-  },
-  {
-    poz: 8,
-    simbol: '',
     domacin: 'NAPREDAK 1986 (-1)',
+    lokacija: 'Bogojevce',
     odigrane: 13,
     pobede: 1,
     nerešeno: 0,
     porazi: 12,
     golovi: '8:36',
     diff: '-28',
-    forma: ['L', 'L', 'L', 'L', 'L'],
     poeni: 2
+  },
+  {
+    poz: 8,
+    simbol: '',
+    domacin: 'TODOROVCE',
+    lokacija: 'Todorovce',
+    odigrane: 13,
+    pobede: 0,
+    nerešeno: 0,
+    porazi: 13,
+    golovi: '0:39',
+    diff: '-39',
+    poeni: 0
   },
 ];
 
@@ -132,10 +132,10 @@ const TabelaPage = () => {
         </div>
       </div>
 
-      {/* Tabela */}
+      {/* Tabela sa oštrim ivicama */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-        <div className="overflow-x-auto rounded-2xl border border-zinc-800 bg-zinc-950 shadow-2xl">
-          <table className="w-full min-w-[950px] text-sm md:text-base">
+        <div className="overflow-x-auto border border-zinc-700 bg-zinc-950 shadow-2xl">
+          <table className="w-full min-w-[900px] text-sm md:text-base">
             <thead>
               <tr className="bg-zinc-900 border-b border-zinc-700 text-[#00A3FF] uppercase text-xs tracking-widest">
                 <th className="py-5 px-6 text-left font-medium">#</th>
@@ -147,7 +147,6 @@ const TabelaPage = () => {
                 <th className="py-5 px-4 text-center font-medium">I</th>
                 <th className="py-5 px-8 text-center font-medium">GOLOVI</th>
                 <th className="py-5 px-6 text-center font-medium">DIFF</th>
-                <th className="py-5 px-12 text-center font-medium">FORMA</th>
                 <th className="py-5 px-8 text-center font-bold text-white">POENI</th>
               </tr>
             </thead>
@@ -165,7 +164,10 @@ const TabelaPage = () => {
                     {row.simbol === '' && <span className="text-zinc-600">▬</span>}
                   </td>
 
-                  <td className="py-5 px-8 font-bold text-white tracking-wider">{row.domacin}</td>
+                  <td className="py-5 px-8 font-bold text-white tracking-wider">
+                    {row.domacin}
+                    <span className="block text-xs text-zinc-500 mt-0.5">{row.lokacija}</span>
+                  </td>
 
                   <td className="py-5 px-4 text-center text-zinc-300">{row.odigrane}</td>
                   <td className="py-5 px-4 text-center text-emerald-400 font-medium">{row.pobede}</td>
@@ -175,24 +177,6 @@ const TabelaPage = () => {
                   
                   <td className={`py-5 px-6 text-center font-medium ${row.diff.startsWith('+') ? 'text-emerald-400' : 'text-red-400'}`}>
                     {row.diff}
-                  </td>
-
-                  {/* Forma - W = 1 (pobeda), D = X (neriješeno), L = 2 (poraz) */}
-                  <td className="py-5 px-12">
-                    <div className="flex gap-1.5 justify-center">
-                      {row.forma.map((f, i) => (
-                        <span 
-                          key={i}
-                          className={`inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded border ${
-                            f === 'W' ? 'bg-emerald-500 text-black border-emerald-500' :
-                            f === 'D' ? 'bg-amber-500 text-black border-amber-500' :
-                            'bg-red-500 text-white border-red-500'
-                          }`}
-                        >
-                          {f}
-                        </span>
-                      ))}
-                    </div>
                   </td>
 
                   <td className="py-5 px-8 text-center font-bold text-2xl text-white">
@@ -205,7 +189,7 @@ const TabelaPage = () => {
         </div>
 
         <p className="text-center text-zinc-500 text-xs mt-6">
-          Poslednje ažuriranje: 5. april 2026. • Gradska liga Leskovac
+          Poslednje ažuriranje: 15. april 2026. • Gradska liga Leskovac
         </p>
       </div>
     </div>

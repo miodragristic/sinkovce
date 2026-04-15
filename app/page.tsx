@@ -186,7 +186,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
 }
 
 // ==================== DATUM SLEDEĆE UTAKMICE ====================
-const nextMatchDate = new Date("2026-04-11T11:00:00+02:00").getTime();
+const nextMatchDate = new Date("2026-04-19T11:00:00+02:00").getTime();
 
 // ==================== DINAMIČKI TAJMER ====================
 function CountdownTimer({ targetDate }: { targetDate: number }) {
@@ -355,6 +355,18 @@ const Home = () => {
 
   const heroItems = [
     {
+    "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
+    "subtitle": "19. april 2026. u 11 sati",
+    "image": "https://i.postimg.cc/DwnVC3fQ/BR3A0035(1).jpg",
+    "link": "/vesti/sinkovce-gostuje-mladost-kutles"
+  },
+    {
+    "title": "Stefan Pavlović povređen: Karijera kapitena pod znakom pitanja",
+    "subtitle": "15. april 2026",
+    "image": "https://i.postimg.cc/mDkrzsfq/BR3A0176.jpg",
+    "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
+  },
+    {
   "title": "Napredak Bogojevce – Gornje Sinkovce 0:3  Službena pobeda par forfe",
   "subtitle": "11. april 2026",
   "image": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
@@ -377,6 +389,24 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
+    {
+  "id": 6,
+  "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "U prvom kolu trećeg kruga FK Gornje Sinkovce gostuje kod trećeplasirane Mladosti iz Kutleša. Utakmica se igra 19. aprila 2026. u 11 sati. Pozivamo sve navijače da dođu u Kutleš!",
+  "imageUrl": "https://i.postimg.cc/DwnVC3fQ/BR3A0035(1).jpg",
+  "link": "/vesti/sinkovce-gostuje-mladost-kutles"
+},
+    {
+  "id": 5,
+  "title": "Stefan Pavlović povređen: Karijera kapitena FK Gornje Sinkovce pod znakom pitanja",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "Kapiten FK Gornje Sinkovce Stefan Pavlović napustio je teren pre kraja poslednje utakmice zbog povrede. Igrao je sa bolovima, a sada se čeka detaljna dijagnoza. Karijera iskusnog vođe tima nalazi se pod velikim znakom pitanja.",
+  "imageUrl": "https://i.postimg.cc/ZnrPg377/BR3A0176(1).jpg",
+  "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
+},
      {
     "id": 4,
     "title": "Napredak Bogojevce – Gornje Sinkovce 0:3 | Službena pobeda par forfe",
@@ -386,25 +416,7 @@ const Home = () => {
     "imageUrl": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
     "link": "/vesti/napredak-bogojevce-vs-fkgs"
   },
-  {
-    "id": 3,
-    "title": "Gornje Sinkovce – Navalin 1:4 | Težak poraz na domaćem terenu",
-    "author": "FK Gornje Sinkovce",
-    "date": "April 07, 2026",
-    "excerpt": "FK Gornje Sinkovce pretrpeo je ubedljiv poraz od Navalina rezultatom 1:4. Odlična igra i vođstvo u prvom poluvremenu preko Miloša Veličkovića, ali potpuni kolaps u drugom delu meča.",
-    "imageUrl": "https://i.postimg.cc/RCs21LHb/BR3A0199(1).jpg",
-    "link": "/vesti/fkgs-vs-navalin"
-  },
-    {
-  "id": 2,
-  "title": "Predstavljeni novi dresovi za sezonu 2026/27 – Premijera već protiv Navalina",
-  "author": "FK Gornje Sinkovce",
-  "date": "April 1, 2026",
-  "excerpt": "FK Gornje Sinkovce predstavio je nove dresove za sezonu 2025/26. Dizajn inspirisan 80-im godinama sa modernim detaljima. Premijera novog dresa već protiv Navalina. Glavni sponzor US11 i retro F.K.G.S. ćirilicom.",
-  "imageUrl": "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg",
-  "link": "/vesti/novi-dres-2025-26"
-},
- 
+  
 
   ];
 
@@ -574,22 +586,25 @@ const Home = () => {
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-0 mb-6 sm:mb-8">
           {/* Timovi */}
-          <div className="text-left">
-            <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">GRADSKA LIGA LESKOVAC - 11:00</p>
-            <p className="text-2xl sm:text-3xl font-bold text-white">NAPREDAK</p>
-            <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
-            <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
-          </div>
+    <div className="text-left">
+      <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">
+        GRADSKA LIGA LESKOVAC
+      </p>
+      <p className="text-2xl sm:text-3xl font-bold text-white">MLADOST KUTLEŠ</p>
+      <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
+      <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
+    </div>
 
-          {/* Tajmer + datum */}
-          <div className="text-center sm:text-right">
-            <CountdownTimer targetDate={nextMatchDate} />
-            <div className="mt-3 sm:mt-4">
-              <div className="text-4xl sm:text-5xl font-bold text-white leading-none">11</div>
-              <div className="text-xs sm:text-sm text-gray-400 uppercase">Apr</div>
-            </div>
-          </div>
-        </div>
+    {/* Tajmer + datum */}
+    <div className="text-center sm:text-right">
+      <CountdownTimer targetDate={nextMatchDate} />
+      <div className="mt-3 sm:mt-4">
+        <div className="text-4xl sm:text-5xl font-bold text-white leading-none">19</div>
+        <div className="text-xs sm:text-sm text-gray-400 uppercase">Apr</div>
+        <div className="text-sm text-gray-400 mt-1">Nedelja • 11:00</div>
+      </div>
+    </div>
+  </div>
 
         
 <Link href="/prvi-tim/tabela" passHref>

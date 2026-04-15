@@ -10,6 +10,24 @@ const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg
 
 const allNews = [
   {
+  "id": 6,
+  "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "U prvom kolu trećeg kruga FK Gornje Sinkovce gostuje kod trećeplasirane Mladosti iz Kutleša. Utakmica se igra 19. aprila 2026. u 11 sati. Pozivamo sve navijače da dođu u Kutleš!",
+  "imageUrl": "https://i.postimg.cc/DwnVC3fQ/BR3A0035(1).jpg",
+  "link": "/vesti/sinkovce-gostuje-mladost-kutles"
+},
+  {
+  "id": 5,
+  "title": "Stefan Pavlović povređen: Karijera kapitena FK Gornje Sinkovce pod znakom pitanja",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "Kapiten FK Gornje Sinkovce Stefan Pavlović napustio je teren pre kraja poslednje utakmice zbog povrede. Igrao je sa bolovima, a sada se čeka detaljna dijagnoza. Karijera iskusnog vođe tima nalazi se pod velikim znakom pitanja.",
+  "imageUrl": "https://i.postimg.cc/ZnrPg377/BR3A0176(1).jpg",
+  "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
+},
+  {
     "id": 4,
     "title": "Napredak Bogojevce – Gornje Sinkovce 0:3 | Službena pobeda par forfe",
     "author": "FK Gornje Sinkovce",
@@ -42,7 +60,7 @@ const allNews = [
   "id": 1,
   "title": "Bod u završnici – FK Gornje Sinkovce izbegao poraz protiv Mladosti iz Kutleša",
   "author": "FK Gornje Sinkovce",
-  "date": "March 29, 2026",
+  "date": "Mart 29, 2026",
   "excerpt": "FK Gornje Sinkovce osvojio je važan bod na domaćem terenu protiv Mladosti iz Kutleša u 90. minutu. Lazar Petrović je realizovao penal i postavio konačnih 2:2.",
   "imageUrl": "https://i.postimg.cc/Rhp7HDSY/gs-utakmica.png",
   "link": "/vesti/fkgs-vs-mladost-k"
