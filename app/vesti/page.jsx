@@ -10,6 +10,15 @@ const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg
 
 const allNews = [
   {
+  "id": 7,
+  "title": "Utakmica u Kutlešu zakazana za 26. april",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "Odložena utakmica protiv Mladosti iz Kutleša dobila je novi termin – 26. april 2026. u 11 sati. Pozivamo navijače da dođu u Kutleš!",
+  "imageUrl": "https://i.postimg.cc/28cj3vB9/BR3A9785(1).jpg",
+  "link": "/vesti/utakmica-kutles-novi-termin"
+},
+  {
   "id": 6,
   "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
   "author": "FK Gornje Sinkovce",

@@ -186,11 +186,15 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
 }
 
 // ==================== DATUM SLEDEĆE UTAKMICE ====================
-const nextMatchDate = new Date("2026-04-19T11:00:00+02:00").getTime();
+const nextMatchDate = new Date("2026-04-26T11:00:00+02:00").getTime();
 
-// ==================== DINAMIČKI TAJMER ====================
+// ==================== TAJMER - SATI  MINUTI  SEKUNDE (TAČNO RAČUNANJE) ====================
 function CountdownTimer({ targetDate }: { targetDate: number }) {
-  const [timeLeft, setTimeLeft] = useState("00:00:00");
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -198,27 +202,50 @@ function CountdownTimer({ targetDate }: { targetDate: number }) {
       const distance = targetDate - now;
 
       if (distance < 0) {
-        setTimeLeft("00:00:00");
+        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
         return;
       }
 
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      // TAČNO računanje ukupnih sati (može biti 100+ sati)
+      const totalHours = Math.floor(distance / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      setTimeLeft(
-        `${hours.toString().padStart(2, '0')}:${minutes
-          .toString()
-          .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-      );
+      setTimeLeft({ 
+        hours: totalHours, 
+        minutes, 
+        seconds 
+      });
     }, 1000);
 
     return () => clearInterval(interval);
   }, [targetDate]);
 
   return (
-    <div className="text-[72px] font-extrabold text-white tracking-tight leading-none">
-      {timeLeft}
+    <div className="flex justify-center sm:justify-end gap-6 sm:gap-8 lg:gap-10">
+      {/* Sati */}
+      <div className="text-center">
+        <div className="text-[72px] sm:text-[85px] lg:text-[92px] font-black leading-none tracking-tighter text-white">
+          {timeLeft.hours.toString().padStart(2, '0')}
+        </div>
+        <div className="text-sm uppercase tracking-widest text-gray-400 mt-1">sati</div>
+      </div>
+
+      {/* Minuti */}
+      <div className="text-center">
+        <div className="text-[72px] sm:text-[85px] lg:text-[92px] font-black leading-none tracking-tighter text-white">
+          {timeLeft.minutes.toString().padStart(2, '0')}
+        </div>
+        <div className="text-sm uppercase tracking-widest text-gray-400 mt-1">minuti</div>
+      </div>
+
+      {/* Sekunde */}
+      <div className="text-center">
+        <div className="text-[72px] sm:text-[85px] lg:text-[92px] font-black leading-none tracking-tighter text-white">
+          {timeLeft.seconds.toString().padStart(2, '0')}
+        </div>
+        <div className="text-sm uppercase tracking-widest text-gray-400 mt-1">sekunde</div>
+      </div>
     </div>
   );
 }
@@ -354,6 +381,12 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const heroItems = [
+     {
+  "title": "Utakmica u Kutlešu zakazana za 26. april",
+  "subtitle": "26. april 2026. u 11 sati",
+  "image": "https://i.postimg.cc/28cj3vB9/BR3A9785(1).jpg",
+  "link": "/vesti/utakmica-kutles-novi-termin"
+},
     {
     "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
     "subtitle": "19. april 2026. u 11 sati",
@@ -373,12 +406,7 @@ const Home = () => {
   "link": "/vesti/napredak-bogojevce-vs-fkgs"
 },
   
-    {
-  "title": "Predstavljeni novi dresovi za sezonu 2026/27",
-  "subtitle": "1. april 2026",
-  "image": "https://i.postimg.cc/SNCPfLHS/IMG-20260327-WA0000.jpg",
-  "link": "/vesti/novi-dres-2025-26"
-},
+  
     // {
     //   title: "USMNT Nike 2026 Kits Unveiled",
     //   subtitle: "Stripes Home & Stars Away for World Cup",
@@ -389,6 +417,15 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
+    {
+  "id": 7,
+  "title": "Utakmica u Kutlešu zakazana za 26. april",
+  "author": "FK Gornje Sinkovce",
+  "date": "April 15, 2026",
+  "excerpt": "Odložena utakmica protiv Mladosti iz Kutleša dobila je novi termin – 26. april 2026. u 11 sati. Pozivamo navijače da dođu u Kutleš!",
+  "imageUrl": "https://i.postimg.cc/28cj3vB9/BR3A9785(1).jpg",
+  "link": "/vesti/utakmica-kutles-novi-termin"
+},
     {
   "id": 6,
   "title": "Sinkovce u nedelju gostuje kod Mladosti iz Kutleša",
@@ -407,15 +444,7 @@ const Home = () => {
   "imageUrl": "https://i.postimg.cc/ZnrPg377/BR3A0176(1).jpg",
   "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
 },
-     {
-    "id": 4,
-    "title": "Napredak Bogojevce – Gornje Sinkovce 0:3 | Službena pobeda par forfe",
-    "author": "FK Gornje Sinkovce",
-    "date": "April 11, 2026",
-    "excerpt": "Utakmica između Napredka Bogojevce i FK Gornje Sinkovce nije odigrana. FK Napredak Bogojevce je odustao od takmičenja, pa je meč registrovan službenim rezultatom 0:3 u korist našeg tima. Tri boda ostaju u Gornjem Sinkovcu.",
-    "imageUrl": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
-    "link": "/vesti/napredak-bogojevce-vs-fkgs"
-  },
+     
   
 
   ];
@@ -433,29 +462,42 @@ const Home = () => {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative h-[620px] lg:h-[780px] w-full overflow-hidden">
-        <Link href={currentItem.link}>
-          <Image src={currentItem.image} alt={currentItem.title} fill className="object-cover brightness-[0.58]" priority />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90" />
-          <div className="absolute bottom-12 left-8 md:left-16 lg:left-24 text-white max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tighter">
-              {currentItem.title}
-            </h1>
-            <p className="mt-6 text-2xl md:text-3xl font-medium">{currentItem.subtitle}</p>
-          </div>
-        </Link>
+      {/* HERO - sa manjim crnim overlay-em */}
+<section className="relative h-[620px] lg:h-[780px] w-full overflow-hidden">
+  <Link href={currentItem.link}>
+    <Image 
+      src={currentItem.image} 
+      alt={currentItem.title} 
+      fill 
+      className="object-cover brightness-[0.75]"   // ← promenjeno sa 0.58 na 0.75 (manje tamno)
+      priority 
+    />
+    
+    {/* Manji i mekši crni overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b 
+                    from-black/10 via-black/40 to-black/75" />   // ← smanjene opacity vrednosti
 
-        <div className="absolute bottom-8 left-8 md:left-16 lg:left-24 flex gap-3 z-20">
-          {heroItems.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-[4px] bg-white/40 transition-all cursor-pointer ${index === currentIndex ? 'w-20 bg-white' : 'w-12'}`}
-            />
-          ))}
-        </div>
-      </section>
+    <div className="absolute bottom-12 left-8 md:left-16 lg:left-24 text-white max-w-4xl z-10">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tighter drop-shadow-md">
+        {currentItem.title}
+      </h1>
+      <p className="mt-6 text-2xl md:text-3xl font-medium drop-shadow-md">
+        {currentItem.subtitle}
+      </p>
+    </div>
+  </Link>
+
+  {/* Indikatori (tačkice) */}
+  <div className="absolute bottom-8 left-8 md:left-16 lg:left-24 flex gap-3 z-20">
+    {heroItems.map((_, index) => (
+      <div
+        key={index}
+        onClick={() => setCurrentIndex(index)}
+        className={`h-[4px] bg-white/40 transition-all cursor-pointer ${index === currentIndex ? 'w-20 bg-white' : 'w-12'}`}
+      />
+    ))}
+  </div>
+</section>
 
       {/* VESTI */}
       <div className="bg-white py-20">
@@ -596,14 +638,14 @@ const Home = () => {
     </div>
 
     {/* Tajmer + datum */}
-    <div className="text-center sm:text-right">
-      <CountdownTimer targetDate={nextMatchDate} />
-      <div className="mt-3 sm:mt-4">
-        <div className="text-4xl sm:text-5xl font-bold text-white leading-none">19</div>
-        <div className="text-xs sm:text-sm text-gray-400 uppercase">Apr</div>
-        <div className="text-sm text-gray-400 mt-1">Nedelja • 11:00</div>
-      </div>
-    </div>
+<div className="text-center sm:text-right mt-4">
+  <CountdownTimer targetDate={nextMatchDate} />
+  
+  <div className="mt-6 sm:mt-8">
+    <div className="text-4xl sm:text-5xl font-bold text-white leading-none">26. april 2026.</div>
+    <div className="text-sm sm:text-base text-gray-400 mt-2">Nedelja • 11:00 • Gradska liga Leskovac</div>
+  </div>
+</div>
   </div>
 
         
@@ -621,6 +663,35 @@ const Home = () => {
 
  {/* ==================== DRES 25/26 SEKCIJA ==================== */}
      <DresSection defaultBgImage={defaultBgImage} />
+
+     {/* JUVE STYLE HERO DIV */}
+<div className="bg-white py-24 sm:py-32 lg:py-40 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    
+    <div className="inline-flex flex-col items-center">
+      
+      {/* Glavni tekst sa striped efektom */}
+      <div className="relative">
+        <h1 className="text-[92px] sm:text-[110px] lg:text-[130px] xl:text-[150px] leading-none font-black tracking-[-6px] text-black italic">
+          MI SMO
+        </h1>
+        <h1 className="text-[92px] sm:text-[110px] lg:text-[130px] xl:text-[150px] leading-none font-black tracking-[-6px] text-black italic -mt-6 lg:-mt-8">
+          FKGS
+        </h1>
+      </div>
+
+      {/* Donji deo - SINCE godina */}
+      <div className="-mt-4 sm:-mt-6">
+        <p className="text-[68px] sm:text-[82px] lg:text-[96px] font-black tracking-[-4px] text-black italic leading-none">
+          EST. <span className="text-[#0008ff]">1980</span>
+        </p>
+      </div>
+
+    </div>
+
+     
+  </div>
+</div>
 
       {/* ==================== NEWSLETTER SEKCIJA (kao Juventus) ==================== */}
 {/* ==================== NEWSLETTER - JUVENTUS STYLE ==================== */}
