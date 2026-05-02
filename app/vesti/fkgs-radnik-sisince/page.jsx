@@ -27,26 +27,26 @@ export default function DerbiGornjeSinkovcePage() {
   };
 
   const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-  const twitterShare = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent('Lokalni derbi: FK Gornje Sinkovce - Radnički Sišince u nedelju u 11h')}`;
+  const twitterShare = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${encodeURIComponent('Lokalni derbi: FK Gornje Sinkovce - Radnik Sišince u nedelju u 11h')}`;
   const whatsappShare = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentUrl)}`;
 
   return (
     <div className="min-h-screen bg-black text-white">
       
-      {/* HERO - Nova slika bez blura */}
+      {/* HERO */}
       <div className="relative h-[740px] flex items-end justify-center overflow-hidden">
         <Image
           src="https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png"
-          alt="FK Gornje Sinkovce - Radnički Sišince"
+          alt="FK Gornje Sinkovce - Radnik Sišince"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/0 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
         <div className="relative z-10 text-left px-4 pb-8 max-w-6xl mx-auto w-full">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-6 text-white">
-             
+            Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-300">
             <span>FK Gornje Sinkovce</span>
@@ -80,15 +80,15 @@ export default function DerbiGornjeSinkovcePage() {
             {copied && <span className="text-green-600 text-sm ml-2">Link kopiran!</span>}
           </div>
 
-          {/* ARTICLE - Tvoj tačan tekst */}
+          {/* ARTICLE */}
           <article className="prose prose-lg max-w-none leading-relaxed text-gray-800 [&>p]:mb-6">
 
             <p className="font-bold text-2xl mb-8">GLAVNE TAČKE UTAKMICE, pres. by US11</p>
             
-            <p><strong>FK Gornje Sinkovce – Radnički Sišince</strong></p>
+            <p><strong>FK Gornje Sinkovce – Radnik Sišince</strong></p>
             
             <p><strong>Lokalni derbi</strong><br />
-              U nedelju, 6. maja na našem terenu igra se pravi okršaj za ponos – derbi između FK Gornje Sinkovce i Radničkog iz Sišinca.
+              U nedelju, 6. maja na našem terenu igra se pravi okršaj za ponos – derbi između FK Gornje Sinkovce i Radnika iz Sišinca.
             </p>
 
             <p><strong>Borba za lokalni ponos</strong><br />
@@ -100,7 +100,7 @@ export default function DerbiGornjeSinkovcePage() {
             </p>
 
             <p><strong>Pun sastav na obe strane</strong><br />
-              Očekujemo skoro kompletan sastav našeg tima, kao i Radnički u najjačem sastavu.
+              Očekujemo skoro kompletan sastav našeg tima, kao i Radnik u najjačem sastavu.
             </p>
 
             <p><strong>Pravi duh fudbala</strong><br />

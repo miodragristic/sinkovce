@@ -11,12 +11,12 @@ const defaultBgImage = "https://i.ibb.co/5hY4jXzz/kir-ufod2u-Fjk-TI-unsplash.jpg
 const allNews = [
   {
   "id": 8,
-  "title": "Lokalni derbi: FK Gornje Sinkovce – Radnički Sišince",
+  "title": "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince",
   "author": "FK Gornje Sinkovce",
   "date": "Maj 2, 2026",
   "excerpt": "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi protiv Radničkog iz Sišinca. Borba za ponos sela!",
   "imageUrl": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
-  "link": "/vesti/lokalni-derbi-radnicki-sisince"
+  "link": "/vesti/fkgs-radnik-sisince"
 },
   {
   "id": 7,

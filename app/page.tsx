@@ -191,7 +191,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
 }
 
 // ==================== DATUM SLEDEĆE UTAKMICE ====================
-const nextMatchDate = new Date("2026-04-26T11:00:00+02:00").getTime();
+const nextMatchDate = new Date("2026-05-06T11:00:00+02:00").getTime();
 
 // ==================== TAJMER - SATI  MINUTI  SEKUNDE (TAČNO RAČUNANJE) ====================
 function CountdownTimer({ targetDate }: { targetDate: number }) {
@@ -387,10 +387,10 @@ const Home = () => {
 
   const heroItems = [
     {
-  "title": "FKGS – Radnički Sišince",
+  "title": "FKGS – Radnik Sišince",
   "subtitle": "",
   "image": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
-  "link": "/vesti/lokalni-derbi-radnicki-sisince"
+  "link": "/vesti/fkgs-radnik-sisince"
 },
      {
   "title": "Utakmica u Kutlešu zakazana za 26. april",
@@ -582,17 +582,16 @@ const Home = () => {
           {/* Jedna utakmica */}
        <div className="flex items-start gap-4">
             <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
-              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">29</div>
-              <div className="text-xs text-gray-400 uppercase mt-1">Mar</div>
+             <div className="text-3xl sm:text-4xl font-bold text-white leading-none">11</div>
+              <div className="text-xs text-gray-400 uppercase mt-1">Apr</div>
             </div>
 
-            
             <div className="flex-1 min-w-0">
               <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
               <div className="flex justify-between items-center gap-4">
                 <div className="space-y-1 min-w-0">
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">NAPREDAK</p>
                   <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">NAVALIN</p>
                 </div>
                 <div className="text-right text-lg sm:text-xl font-bold shrink-0">
                   <p className="text-[#00A3FF]">1</p>
@@ -605,7 +604,7 @@ const Home = () => {
           {/* Druga utakmica – isti blok */}
           <div className="flex items-start gap-4">
             <div className="w-14 sm:w-16 text-right border-r border-zinc-700 pr-3 sm:pr-4 shrink-0">
-              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">11</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white leading-none">26</div>
               <div className="text-xs text-gray-400 uppercase mt-1">Apr</div>
             </div>
 
@@ -613,7 +612,7 @@ const Home = () => {
               <p className="text-xs text-gray-400 mb-2">GRADSKA LIGA LESKOVAC - 11:00</p>
               <div className="flex justify-between items-center gap-4">
                 <div className="space-y-1 min-w-0">
-                  <p className="text-white text-base sm:text-lg font-semibold truncate">NAPREDAK</p>
+                  <p className="text-white text-base sm:text-lg font-semibold truncate">MLADOST KUTLEŠ</p>
                   <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
                 </div>
                 <div className="text-right text-lg sm:text-xl font-bold shrink-0">
@@ -638,9 +637,9 @@ const Home = () => {
       <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3">
         GRADSKA LIGA LESKOVAC
       </p>
-      <p className="text-2xl sm:text-3xl font-bold text-white">MLADOST KUTLEŠ</p>
-      <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
       <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
+      <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
+      <p className="text-2xl sm:text-3xl font-bold text-white">RADNIČKI SIŠINCE</p>
     </div>
 
     {/* Tajmer + datum */}
@@ -648,7 +647,7 @@ const Home = () => {
   <CountdownTimer targetDate={nextMatchDate} />
   
   <div className="mt-6 sm:mt-8">
-    <div className="text-4xl sm:text-5xl font-bold text-white leading-none">26. april 2026.</div>
+    <div className="text-4xl sm:text-5xl font-bold text-white leading-none">6. maj 2026.</div>
     <div className="text-sm sm:text-base text-gray-400 mt-2">Nedelja • 11:00 • Gradska liga Leskovac</div>
   </div>
 </div>
