@@ -33,10 +33,10 @@ export default function DerbiGornjeSinkovcePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       
-      {/* HERO */}
+      {/* HERO - Nova slika */}
       <div className="relative h-[740px] flex items-end justify-center overflow-hidden">
         <Image
-          src="https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png"
+          src="https://i.postimg.cc/rsbM2scr/BR3A9961.jpg"
           alt="FK Gornje Sinkovce - Radnik Sišince"
           fill
           className="object-cover"
@@ -51,7 +51,7 @@ export default function DerbiGornjeSinkovcePage() {
           <div className="flex items-center gap-4 text-sm text-gray-300">
             <span>FK Gornje Sinkovce</span>
             <span>•</span>
-            <time>6. maj 2026.</time>
+            <time>3. maj 2026.</time>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function DerbiGornjeSinkovcePage() {
             <p><strong>FK Gornje Sinkovce – Radnik Sišince</strong></p>
             
             <p><strong>Lokalni derbi</strong><br />
-              U nedelju, 6. maja na našem terenu igra se pravi okršaj za ponos – derbi između FK Gornje Sinkovce i Radnika iz Sišinca.
+              U nedelju, 3. maja na našem terenu igra se pravi okršaj za ponos – derbi između FK Gornje Sinkovce i Radnika iz Sišinca.
             </p>
 
             <p><strong>Borba za lokalni ponos</strong><br />

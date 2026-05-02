@@ -2,8 +2,8 @@ import React from 'react';
 
 // 🟢 Server component – metadata
 export const metadata = {
-  title: "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince | 6. maj u 11 sati",
-  description: "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi između FK Gornje Sinkovce i Radnika iz Sišinca. Borba za ponos sela!",
+  title: "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince | 3. maj u 11 sati",
+  description: "U nedelju 3. maja u 11 sati na našem terenu igra se pravi lokalni derbi između FK Gornje Sinkovce i Radnika iz Sišinca. Borba za ponos sela!",
   keywords: [
     "lokalni derbi", 
     "FK Gornje Sinkovce", 
@@ -11,7 +11,7 @@ export const metadata = {
     "derbi Sinkovce",
     "fudbal Sinkovce", 
     "FKGS", 
-    "derbi 6. maj", 
+    "derbi 3. maj", 
     "srpski fudbal 2026"
   ],
   openGraph: {
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: "FKGS",
     images: [
       {
-        url: "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+        url: "https://i.postimg.cc/rsbM2scr/BR3A9961.jpg",
         width: 1200,
         height: 800,
         alt: "FK Gornje Sinkovce - Radnik Sišince derbi"
@@ -34,7 +34,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince",
     description: "6. maj u 11 sati | Borba za lokalni ponos",
-    images: ["https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png"],
+    images: ["https://i.postimg.cc/rsbM2scr/BR3A9961.jpg"],
     creator: "@FKGS_RS"
   },
   alternates: {
@@ -54,7 +54,7 @@ export default function Layout({ children }) {
             "@type": "NewsArticle",
             "headline": "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince",
             "description": "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi između FK Gornje Sinkovce i Radnika iz Sišinca.",
-            "image": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+            "image": "https://i.postimg.cc/rsbM2scr/BR3A9961.jpg",
             "datePublished": "2026-05-02T20:30:00+02:00",
             "dateModified": "2026-05-02T20:30:00+02:00",
             "author": {

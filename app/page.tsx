@@ -191,7 +191,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
 }
 
 // ==================== DATUM SLEDEĆE UTAKMICE ====================
-const nextMatchDate = new Date("2026-05-06T11:00:00+02:00").getTime();
+const nextMatchDate = new Date("2026-03-06T11:00:00+02:00").getTime();
 
 // ==================== TAJMER - SATI  MINUTI  SEKUNDE (TAČNO RAČUNANJE) ====================
 function CountdownTimer({ targetDate }: { targetDate: number }) {
@@ -300,12 +300,14 @@ function PositionSection({ title = "", players, bgImage, specialPlayerImage = nu
           <button
             onClick={prevSlide}
             className="w-12 h-12 border-2 bg-white border-white/70 rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
+            suppressHydrationWarning={true}
           >
             ←
           </button>
           <button
             onClick={nextSlide}
             className="w-12 h-12 border-2 bg-white border-white/70 rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
+            suppressHydrationWarning={true}
           >
             →
           </button>
@@ -388,8 +390,8 @@ const Home = () => {
   const heroItems = [
     {
   "title": "FKGS – Radnik Sišince",
-  "subtitle": "",
-  "image": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+  "subtitle": "Lokalni derbi | Nedelja, 3. maj 2026. u 11 sati",
+  "image": "https://i.postimg.cc/rsbM2scr/BR3A9961.jpg",
   "link": "/vesti/fkgs-radnik-sisince"
 },
      {
@@ -422,13 +424,13 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
-    {
+   {
   "id": 8,
-  "title": "Lokalni derbi: FK Gornje Sinkovce – Radnički Sišince",
+  "title": "Lokalni derbi: FK Gornje Sinkovce – Radnik Sišince",
   "author": "FK Gornje Sinkovce",
   "date": "Maj 2, 2026",
-  "excerpt": "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi protiv Radničkog iz Sišinca. Borba za ponos sela!",
-  "imageUrl": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+  "excerpt": "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi protiv Radnika iz Sišinca. Borba za ponos sela!",
+  "imageUrl": "https://i.postimg.cc/rsbM2scr/BR3A9961.jpg",
   "link": "/vesti/fkgs-radnik-sisince"
 },
     {
