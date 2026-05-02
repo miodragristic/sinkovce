@@ -12,12 +12,14 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +39,6 @@ export const metadata: Metadata = {
     "fudbalski klub"
   ],
 
-  // ← EVO GA GOOGLE SITE VERIFICATION
   verification: {
     google: "_SiQgprNJyVnLozxbjDOooPVyTIUguaKR5i_EcgPPGI",
   },
@@ -80,9 +81,19 @@ export default function RootLayout({
   return (
     <html lang="sr">
       <head>
-        {/* Google Analytics */}
-        <Script 
-          async 
+        {/* === COOKIEBOT - VAŽNO: beforeInteractive + manual mode === */}
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="482623d0-f805-4f44-a8ce-cf508821d662"
+          data-blockingmode="manual"
+          strategy="beforeInteractive"
+          type="text/javascript"
+        />
+
+        {/* === GOOGLE ANALYTICS 4 === */}
+        <Script
+          async
           src="https://www.googletagmanager.com/gtag/js?id=G-F2SRVWCS19"
           strategy="afterInteractive"
         />
@@ -94,20 +105,21 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-F2SRVWCS19');
+
+              // Default consent - sve je denied dok korisnik ne prihvati
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                functionality_storage: 'denied',
+                personalization_storage: 'denied',
+                security_storage: 'granted'
+              });
+
+              gtag('config', 'G-F2SRVWCS19', {
+                page_path: window.location.pathname,
+              });
             `,
           }}
-        />
-
-        {/* Cookiebot - GDPR Cookie Consent */}
-        <Script 
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="482623d0-f805-4f44-a8ce-cf508821d662"
-          data-blockingmode="manual"
-          type="text/javascript"
-          async
-          strategy="afterInteractive"
         />
       </head>
 
@@ -115,7 +127,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
         <Navbar />
-
+        
         <main className="flex-grow pt-20 min-h-[calc(100vh-80px)]">
           {children}
         </main>

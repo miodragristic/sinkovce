@@ -8,10 +8,25 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translate(0px, 0px)" },
+          "50%": { transform: "translate(10px, -10px)" },
+        },
+
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+
+      animation: {
+        float: "float 5s ease-in-out infinite",
+
+        marquee: "marquee 35s linear infinite",
+      },
+    },
   },
-  plugins: [
-    // @tailwindcss/aspect-ratio je uklonjen jer je u Tailwind v4 ugrađen direktno
-    // Više ga ne treba ovde
-  ],
+  plugins: [],
 };

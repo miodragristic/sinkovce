@@ -59,6 +59,14 @@ interface DresSectionProps {
 }
 function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 1024);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
 
   // Ovde stavi 10 različitih slika kasnije
   const dresovi = [
@@ -110,10 +118,7 @@ function DresSection({ defaultBgImage: dresBgImage = defaultBgImage }: DresSecti
   <div
     className="flex transition-transform duration-500 ease-in-out gap-4 lg:gap-6 justify-center lg:justify-start"
     style={{
-      transform:
-        typeof window !== "undefined" && window.innerWidth < 1024
-          ? `translateX(-${currentIndex * 100}%)`
-          : `translateX(-${currentIndex * 280}px)`
+      transform: `translateX(-${currentIndex * (isMobile ? 100 : 280)}${isMobile ? '%' : 'px'})`
     }}
   >
     {dresovi.map((item, index) => (
@@ -294,7 +299,7 @@ function PositionSection({ title = "", players, bgImage, specialPlayerImage = nu
         <div className="flex gap-4">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 border-2 bg-white  border-white/70 rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
+            className="w-12 h-12 border-2 bg-white border-white/70 rounded-full flex items-center justify-center text-3xl hover:bg-black hover:text-white transition-all"
           >
             ←
           </button>
@@ -381,6 +386,12 @@ const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const heroItems = [
+    {
+  "title": "FKGS – Radnički Sišince",
+  "subtitle": "",
+  "image": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+  "link": "/vesti/lokalni-derbi-radnicki-sisince"
+},
      {
   "title": "Utakmica u Kutlešu zakazana za 26. april",
   "subtitle": "26. april 2026. u 11 sati",
@@ -399,13 +410,7 @@ const Home = () => {
     "image": "https://i.postimg.cc/mDkrzsfq/BR3A0176.jpg",
     "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
   },
-    {
-  "title": "Napredak Bogojevce – Gornje Sinkovce 0:3  Službena pobeda par forfe",
-  "subtitle": "11. april 2026",
-  "image": "https://i.postimg.cc/mZQ3G6hz/BR3A0207(1).jpg",
-  "link": "/vesti/napredak-bogojevce-vs-fkgs"
-},
-  
+     
   
     // {
     //   title: "USMNT Nike 2026 Kits Unveiled",
@@ -417,6 +422,15 @@ const Home = () => {
 
 
   const blogPosts: Post[] = [
+    {
+  "id": 8,
+  "title": "Lokalni derbi: FK Gornje Sinkovce – Radnički Sišince",
+  "author": "FK Gornje Sinkovce",
+  "date": "Maj 2, 2026",
+  "excerpt": "U nedelju 6. maja u 11 sati na našem terenu igra se pravi lokalni derbi protiv Radničkog iz Sišinca. Borba za ponos sela!",
+  "imageUrl": "https://i.postimg.cc/7PdHjJfJ/sledeci-mec.png",
+  "link": "/vesti/lokalni-derbi-radnicki-sisince"
+},
     {
   "id": 7,
   "title": "Utakmica u Kutlešu zakazana za 26. april",
@@ -435,15 +449,7 @@ const Home = () => {
   "imageUrl": "https://i.postimg.cc/DwnVC3fQ/BR3A0035(1).jpg",
   "link": "/vesti/sinkovce-gostuje-mladost-kutles"
 },
-    {
-  "id": 5,
-  "title": "Stefan Pavlović povređen: Karijera kapitena FK Gornje Sinkovce pod znakom pitanja",
-  "author": "FK Gornje Sinkovce",
-  "date": "April 15, 2026",
-  "excerpt": "Kapiten FK Gornje Sinkovce Stefan Pavlović napustio je teren pre kraja poslednje utakmice zbog povrede. Igrao je sa bolovima, a sada se čeka detaljna dijagnoza. Karijera iskusnog vođe tima nalazi se pod velikim znakom pitanja.",
-  "imageUrl": "https://i.postimg.cc/ZnrPg377/BR3A0176(1).jpg",
-  "link": "/vesti/gornje-sinkovce-povreda-pavlovic"
-},
+   
      
   
 
@@ -649,10 +655,11 @@ const Home = () => {
   </div>
 
         
-<Link href="/prvi-tim/tabela" passHref>
-  <button className="mt-auto w-full border border-white/70 text-white py-3.5 sm:py-4 font-semibold tracking-wide hover:bg-white hover:text-black transition-all text-sm sm:text-base cursor-pointer">
-    TABELA
-  </button>
+<Link
+  href="/prvi-tim/tabela"
+  className="mt-auto w-full border border-white/70 text-white py-3.5 sm:py-4 font-semibold tracking-wide hover:bg-white hover:text-black transition-all text-sm sm:text-base text-center"
+>
+  TABELA
 </Link>
       </div>
 
