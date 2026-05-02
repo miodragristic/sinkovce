@@ -594,8 +594,8 @@ const Home = () => {
                   <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
                 </div>
                 <div className="text-right text-lg sm:text-xl font-bold shrink-0">
-                  <p className="text-[#00A3FF]">1</p>
-                  <p className="text-[#00A3FF]">4</p>
+                  <p className="text-[#00A3FF]">0</p>
+                  <p className="text-[#00A3FF]">3</p>
                 </div>
               </div>
             </div>
@@ -616,8 +616,8 @@ const Home = () => {
                   <p className="text-white text-base sm:text-lg font-semibold truncate">GORNJE SINKOVCE</p>
                 </div>
                 <div className="text-right text-lg sm:text-xl font-bold shrink-0">
-                  <p className="text-[#00A3FF]">0</p>
-                  <p className="text-[#00A3FF]">3</p>
+                  <p className="text-[#00A3FF]">9</p>
+                  <p className="text-[#00A3FF]">1</p>
                 </div>
               </div>
             </div>
