@@ -639,7 +639,7 @@ const Home = () => {
       </p>
       <p className="text-2xl sm:text-3xl font-bold text-white">GORNJE SINKOVCE</p>
       <p className="text-[#00A3FF] text-sm my-2 font-medium">X</p>
-      <p className="text-2xl sm:text-3xl font-bold text-white">RADNIČKI SIŠINCE</p>
+      <p className="text-2xl sm:text-3xl font-bold text-white">RADNIK SIŠINCE</p>
     </div>
 
     {/* Tajmer + datum */}
